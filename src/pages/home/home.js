@@ -112,7 +112,7 @@ function Home() {
     const [open, setOpen] = React.useState(true);
 
     const handleDrawerOpen = () => {
-        setOpen(true);
+        setOpen(!open);
     };
 
     const handleDrawerClose = () => {
@@ -187,18 +187,6 @@ function Home() {
                 <AppBar position="fixed" open={open} id="top"  style={{ width: '100%',backgroundImage: 'url(/images/header.jpeg)', backgroundPosition: '229px -44px', backgroundRepeat: "norepeat", 
                 backgroundColor: 'white' }}>
                     <Toolbar id="toolbar" style={{paddingLeft: 0}}>
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            onClick={handleDrawerOpen}
-                            edge="start"
-                            sx={{
-                                marginRight: '36px',
-                                ...(open && { display: 'none' }),
-                            }}
-                        >
-                            <MenuIcon />
-                        </IconButton>
                         <Typography variant="h6" component="div" style={{ backgroundImage: 'url(/images/logo.jpeg)', backgroundSize: 'cover', height: '67px', width: '116px' }}/* variant="h6" noWrap component="div" style={{ textAlignVertical: "center", textAlign: "center", }} */>
                             
                         </Typography>
@@ -292,6 +280,17 @@ function Home() {
                             <ListItemText primary={"LogOut"} />
                         </ListItem>
                     </NavLink>
+                    <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            sx={{
+                                marginRight: '36px',
+                            }}
+                        >
+                            open/Close
+                        </IconButton>
                 </Drawer>
                 <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                     <DrawerHeader />
