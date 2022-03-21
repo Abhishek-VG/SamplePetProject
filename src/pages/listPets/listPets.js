@@ -96,28 +96,28 @@ function ListPets() {
         <TableHead>
           <TableRow style={{ backgroundColor: "#BDB76B", fontWeight: "bold" }}>
             <TableCell style={{ fontWeight: "bold" }}>Type</TableCell>
-            <TableCell align="right" style={{ fontWeight: "bold" }}>
+            <TableCell align="left" style={{ fontWeight: "bold" }}>
               Pet Id
             </TableCell>
-            <TableCell align="right" style={{ fontWeight: "bold" }}>
+            <TableCell align="left" style={{ fontWeight: "bold" }}>
               Name
             </TableCell>
-            <TableCell align="right" style={{ fontWeight: "bold" }}>
+            <TableCell align="left" style={{ fontWeight: "bold" }}>
               Breed
             </TableCell>
-            <TableCell align="right" style={{ fontWeight: "bold" }}>
+            <TableCell align="left" style={{ fontWeight: "bold" }}>
               Description
             </TableCell>
-            <TableCell align="right" style={{ fontWeight: "bold" }}>
+            <TableCell align="left" style={{ fontWeight: "bold" }}>
               Price
             </TableCell>
-            <TableCell align="right" style={{ fontWeight: "bold" }}>
+            <TableCell align="left" style={{ fontWeight: "bold" }}>
               Photo
             </TableCell>
-            <TableCell align="right" style={{ fontWeight: "bold" }}>
+            <TableCell align="left" style={{ fontWeight: "bold" }}>
               EDIT
             </TableCell>
-            <TableCell align="right" style={{ fontWeight: "bold" }}>
+            <TableCell align="left" style={{ fontWeight: "bold" }}>
               Delete
             </TableCell>
           </TableRow>
@@ -128,23 +128,23 @@ function ListPets() {
               key={row.name}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
+              <TableCell align="left" component="th" scope="row">
                 {row.type}
               </TableCell>
-              <TableCell align="right">{row.petid}</TableCell>
-              <TableCell align="right">{row.name}</TableCell>
-              <TableCell align="right">{row.breed}</TableCell>
-              <TableCell align="right">{row.description}</TableCell>
-              <TableCell align="right">{row.price}</TableCell>
-              <TableCell align="right">
+              <TableCell align="left">{row.petid}</TableCell>
+              <TableCell align="left">{row.name}</TableCell>
+              <TableCell align="left">{row.breed}</TableCell>
+              <TableCell align="left">{row.description}</TableCell>
+              <TableCell align="left">{row.price}</TableCell>
+              <TableCell align="left">
                 <img style={{ height: "50px" }} src={row.pic} alt={row.pic} />
               </TableCell>
-              <TableCell align="right">
+              <TableCell align="left">
                 <IconButton title="Edit" onClick={() => edit(row.petid)}>
                   <EditIcon />
                 </IconButton>
               </TableCell>
-              <TableCell align="right">
+              <TableCell align="left">
                 <IconButton
                   title="Delete"
                   onClick={() => handleRemove(row.petid)}
