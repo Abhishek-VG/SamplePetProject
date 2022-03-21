@@ -18,6 +18,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ListIcon from '@mui/icons-material/List';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import AddIcon from '@mui/icons-material/Add';
 import SvgIcon from '@mui/material/SvgIcon';
 import { green } from '@mui/material/colors';
@@ -32,6 +33,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { Button, CardHeader } from '@mui/material';
 import { GET_PETS } from '../../util/constants';
+import AddTaskIcon from '@mui/icons-material/AddTask';
 
 
 
@@ -244,7 +246,7 @@ function Home() {
                                 <ListItemIcon>
                                     <ListIcon sx={{ color: "green", fontSize: 35 }} />
                                 </ListItemIcon>
-                                <ListItemText primary={"List"} />
+                                <ListItemText primary={"List Pets"} />
                             </ListItem>
                         </NavLink>
 
@@ -254,7 +256,7 @@ function Home() {
                         }}>
                             <ListItem button key={"customer"}>
                                 <ListItemIcon>
-                                    <ListIcon sx={{ color: "green", fontSize: 35 }} />
+                                    <AddTaskIcon sx={{ color: "green", fontSize: 35 }} />
                                 </ListItemIcon>
                                 <ListItemText primary={"Add Customer"} />
                             </ListItem>
@@ -266,9 +268,9 @@ function Home() {
                         }}>
                             <ListItem button key={"custlist"}>
                                 <ListItemIcon>
-                                    <ListIcon sx={{ color: "green", fontSize: 35 }} />
+                                    <VisibilityOutlinedIcon sx={{ color: "green", fontSize: 35 }} />
                                 </ListItemIcon>
-                                <ListItemText primary={"custlist"} />
+                                <ListItemText primary={"Customer List"} />
                             </ListItem>
                         </NavLink>
 
