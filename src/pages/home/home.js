@@ -204,7 +204,7 @@ function Home() {
                     </Toolbar>
                 </AppBar>
                 <Drawer variant="permanent" open={open} >
-                    <DrawerHeader style={{ backgroundImagea: 'url(/images/head.png)', backgroundSize: 'contain' }}>
+                    <DrawerHeader style={{ backgroundImage: 'url(/images/head.png)', backgroundSize: 'contain' }}>
                         <IconButton onClick={handleDrawerClose}>
                             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                         </IconButton>
