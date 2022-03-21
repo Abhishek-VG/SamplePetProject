@@ -1,3 +1,14 @@
+create database if not exists pets;
+use pets;
+
+drop table if exists dogs;
+drop table if exists birds;
+drop table if exists cats;
+drop table if exists fish;
+drop table if exists customer;
+drop table if exists animals;
+
+
 create table animals(
 petid int NOT NULL AUTO_INCREMENT,
 type varchar(255) NOT NULL,
