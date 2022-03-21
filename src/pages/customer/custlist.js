@@ -66,12 +66,12 @@ function Custlist() {
             <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                 <TableHead>
                     <TableRow style={{ backgroundColor: "#BDB76B", fontWeight: "bold" }}>
-                        <TableCell align="right" style={{ fontWeight: "bold" }}>Id</TableCell>
-                        <TableCell align="right" style={{ fontWeight: "bold" }}>Name</TableCell>
-                        <TableCell align="right" style={{ fontWeight: "bold" }}>Profuct</TableCell>
-                        <TableCell align="right" style={{ fontWeight: "bold" }}>Price</TableCell>
-                        <TableCell align="right" style={{ fontWeight: "bold" }}>Contact</TableCell>
-                        <TableCell align="right" style={{ fontWeight: "bold" }}>Address</TableCell>
+                        <TableCell align="center" style={{ fontWeight: "bold" }}>Id</TableCell>
+                        <TableCell align="center" style={{ fontWeight: "bold" }}>Name</TableCell>
+                        <TableCell align="center" style={{ fontWeight: "bold" }}>Profuct</TableCell>
+                        <TableCell align="center" style={{ fontWeight: "bold" }}>Price</TableCell>
+                        <TableCell align="center" style={{ fontWeight: "bold" }}>Contact</TableCell>
+                        <TableCell align="center" style={{ fontWeight: "bold" }}>Address</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody style={{ backgroundColor: '#C0C0C0' }}>
@@ -79,14 +79,14 @@ function Custlist() {
                         <TableRow
                             key={row.name}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                            <TableCell component="th" scope="row">
+                            <TableCell align="center" component="th" scope="row">
                                 {row.id}
                             </TableCell>
-                            <TableCell align="right">{row.name}</TableCell>
-                            <TableCell align="right">{row.product}</TableCell>
-                            <TableCell align="right">{row.price}</TableCell>
-                            <TableCell align="right">{row.contact}</TableCell>
-                            <TableCell align="right">{row.address}</TableCell>
+                            <TableCell align="center">{row.name}</TableCell>
+                            <TableCell align="center">{row.product}</TableCell>
+                            <TableCell align="center">{row.price}</TableCell>
+                            <TableCell align="center">{row.contact}</TableCell>
+                            <TableCell align="center">{row.address}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

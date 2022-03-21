@@ -158,23 +158,7 @@ function Dashboard() {
                     Fish
                 </Button>
                 
-                <Button
-                    variant="outlined"
-                    component="label"
-                    style={{
-                        backgroundColor: 'green',
-                        color: 'white',
-                        WebkitBoxSizing: 'border-box',
-                        WebkitBorderRadius: '20px',
-                        fontWeight: 'bold',
-                        margin:'10px',
-
-                    }}
-                    onClick={customerlist}
-
-                >
-                   Customers
-                </Button>
+                
             </Grid>
             
 

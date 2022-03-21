@@ -48,14 +48,11 @@ pic mediumtext NOT NULL,
 CONSTRAINT FK_fish FOREIGN KEY (petid) REFERENCES animals (petid) ON DELETE CASCADE);
 
 
-
-
-
-
-----------------------------------------------------------------------------------------------------------------------------------------
-
-
-
+create table users(
+    userid varchar(10),
+    password varchar(25)
+);
+------------------------------------------------------------------------------------------------------------------------------
 
 
 create table customer(
