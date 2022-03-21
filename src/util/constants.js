@@ -15,4 +15,4 @@ export const POST_CUST = `${BASE_URL}/customer`;
 
 export const CUST_LIST = `${BASE_URL}/custlist`;
 
-export const LOGIN = `${BASE_URL}/custlist`;
+export const LOGIN = `${BASE_URL}/user`;

@@ -14,23 +14,40 @@ const Login = () => {
     const [data, setData] = React.useState({
         userid: "",
         password: "",
+        repassword: "",
         
     });
     
+    const handleChange = (event) => {
+        const { id, value } = event.target
+        setData({
+            ...data,
+            [id]: value,
+          });
+       
+    };
     
     const navigate = useNavigate();
 
     const handleClick = () => {
+        if (Object.values(data).some((evry) => !evry)) {
+            console.log("password",data.password)
+          alert("fill all the fields");
+        } 
+         else if((data.password) !== (data.repassword))
+        {
+            alert("passwords not match");
+        } else {
+          apiCall(data);
+          navigate("/signup");
+        }
         
-            apiCall(data);
-            navigate('/home/list')  
-        
-    }
+    };
 
-    const handleChange = (event) => {
-        const { id, value } = event.target
-       
-    }
+
+   
+
+    
 
     const apiCall = (data) => {
 
