@@ -34,8 +34,8 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { Button, CardHeader } from '@mui/material';
 import { GET_PETS } from '../../util/constants';
 import AddTaskIcon from '@mui/icons-material/AddTask';
-
-
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const drawerWidth = 240;
 
@@ -286,10 +286,15 @@ function Home() {
                             onClick={handleDrawerOpen}
                             edge="start"
                             sx={{
-                                marginRight: '36px',
+                                position: 'absolute',
+                                bottom: '0px',
+                                right: '0px',
+                                left: '0px',
+                                width: '100%',
+                                cursor: 'pointer'
                             }}
                         >
-                            open/Close
+                            <Grid style={{display: "flex", justifyContent: "center"}} container><div>{open ? <ArrowBackIcon />:<ArrowForwardIcon/>}</div></Grid>
                         </IconButton>
                 </Drawer>
                 <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
