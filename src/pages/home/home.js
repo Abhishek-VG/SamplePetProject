@@ -184,8 +184,9 @@ function Home() {
         <div style={{ backgroundColor: '#d1e8e2', height: '121vh' }}>
             <Box sx={{ display: 'flex' }} >
                 <CssBaseline />
-                <AppBar position="fixed" open={open}>
-                    <Toolbar>
+                <AppBar position="fixed" open={open} id="top"  style={{ width: '100%',backgroundImage: 'url(/images/header.jpeg)', backgroundPosition: '229px -44px', backgroundRepeat: "norepeat", 
+                backgroundColor: 'white' }}>
+                    <Toolbar id="toolbar" style={{paddingLeft: 0}}>
                         <IconButton
                             color="inherit"
                             aria-label="open drawer"
@@ -198,8 +199,8 @@ function Home() {
                         >
                             <MenuIcon />
                         </IconButton>
-                        <Typography variant="h6" component="div" style={{ color: "#FEFFA5", textAlign: "center" }}/* variant="h6" noWrap component="div" style={{ textAlignVertical: "center", textAlign: "center", }} */>
-                            Pet Store
+                        <Typography variant="h6" component="div" style={{ backgroundImage: 'url(/images/logo.jpeg)', backgroundSize: 'cover', height: '67px', width: '116px' }}/* variant="h6" noWrap component="div" style={{ textAlignVertical: "center", textAlign: "center", }} */>
+                            
                         </Typography>
                     </Toolbar>
                 </AppBar>
@@ -219,7 +220,7 @@ function Home() {
                             <ListItem button key={"Home"} >
                                 <ListItemIcon>
                                     <SvgIcon sx={{ color: "green", fontSize: 35 }}>
-                                   // <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
                                     </SvgIcon>
                                 </ListItemIcon>
                                 <ListItemText primary={"Home"} />
