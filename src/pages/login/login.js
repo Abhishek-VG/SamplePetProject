@@ -82,13 +82,17 @@ const Login = () => {
 
                 />
                 <br />
-                <Grid container>
-                    <Grid item xs>
-                        <Link href="#" variant="body2">
-                            Forgot password?
-                        </Link>
-                    </Grid>
-                </Grid>
+                <br />
+                <TextField
+                    id="repassword"
+                    label="re enter password"
+                    fullWidth
+                    variant="outlined"
+                    onChange={handleChange}
+
+                />
+                <br />
+                
 
                 <br />
                 <Button
