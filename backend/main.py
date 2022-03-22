@@ -6,15 +6,12 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
     password="password",
     database="pets"
 )
-
-
 class PetModel:
     def __init__(self, petid, type, name, breed, description, price, pic):
         self.petid = petid
@@ -37,14 +34,6 @@ class CustModel:
         self.contact = contact
         self.address = address
 
-    def toJson(self):
-        return json.dumps(self, default=lambda obj: obj.__dict__)
-
-class UserModel:
-    def __init__(self, userid, password):
-        self.userid = userid
-        self.password = password
-        
     def toJson(self):
         return json.dumps(self, default=lambda obj: obj.__dict__)
 
@@ -78,12 +67,9 @@ def get_pets():
     return jsonify(list)
 
 
-
-
 @app.route('/post', methods=['POST'])
 @cross_origin()
 def post():
-
     mycursor = mydb.cursor()
     data = request.json  # data is empty
     sql = "INSERT INTO animals (type, name) VALUES (%s, %s)"
@@ -93,19 +79,15 @@ def post():
     mydb.commit()
 
     if data["type"] == "dogs":
-
         sql = "INSERT INTO dogs (petid, breed, price, description, pic) VALUES (%s, %s, %s, %s, %s)"
 
     elif data["type"] == "cats":
-
         sql = "INSERT INTO cats (petid, breed, price, description, pic) VALUES (%s, %s, %s, %s, %s)"
 
     elif data["type"] == "birds":
-
         sql = "INSERT INTO birds (petid, breed, price, description, pic) VALUES (%s, %s, %s, %s, %s)"
 
     elif data["type"] == "fish":
-
         sql = "INSERT INTO fish (petid, breed, price, description, pic) VALUES (%s, %s, %s, %s, %s)"
 
     val = (last_id, data["breed"], data["price"],
@@ -118,14 +100,12 @@ def post():
 @app.route('/customer', methods=['POST'])
 @cross_origin()
 def customer():
-
     mycursor = mydb.cursor()
     data = request.json  # data is empty
     sql = "INSERT INTO customer (name, product,price, contact, address) VALUES (%s, %s, %s, %s, %s)"
     val = (data["name"], data["product"],data["price"], data["contact"],data["address"])
     mycursor.execute(sql, val)
     mydb.commit()
-
     return json.dumps(True)
     
 @app.route("/custlist", methods=["GET"])
@@ -138,7 +118,6 @@ def get_cust():
     db = mycursor.fetchall()
     list = []
     for x in db:
-
         list.append(CustModel (x[0], x[1], x[2], x[3], x[4], x[5]).toJson().strip())
     return jsonify(list)
  
@@ -173,7 +152,7 @@ def log_user():
     mycursor.execute(sql, val)
     myresult = mycursor.fetchone()
     if (myresult != None and (myresult[0] == data["userid"])):
-                    return json.dumps(True)
+         return json.dumps(True)
     return json.dumps(False)
 
 @app.route("/deletePets/<petid>", methods=["DELETE"])
