@@ -221,7 +221,7 @@ const AddPets = () => {
                         id="pic"
                         type="file"
                         hidden
-                        accept='.png,.jpeg,.jpg,.jpe,.jfif,.jif'
+                        accept='.png,.jpeg,.jpg,.jpe,.jfif,.jif,.webp'
                     />
                 </Button>
                 <br />
