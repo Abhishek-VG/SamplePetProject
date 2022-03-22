@@ -16,3 +16,5 @@ export const POST_CUST = `${BASE_URL}/customer`;
 export const CUST_LIST = `${BASE_URL}/custlist`;
 
 export const LOGIN = `${BASE_URL}/user`;
+
+export const USER_LOGIN = `${BASE_URL}/loguser`;

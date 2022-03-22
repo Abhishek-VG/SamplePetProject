@@ -8,7 +8,6 @@ import { POST_CUST } from "../../util/constants";
 
 const Customer = () => {
   const myStyle = {
-    backgroundImage: "url(/images/naayi.jfif)",
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
@@ -42,7 +41,6 @@ const Customer = () => {
       apiCall(data);
       navigate("/home/custlist");
     }
-    
   };
 
   React.useEffect(() => {
@@ -69,10 +67,11 @@ const Customer = () => {
         console.log(result);
       })
 
-      .catch(error => {
+      .catch((error) => {
         setDisableBtn(false);
-        console.log('error', error)
-    });  };
+        console.log("error", error);
+      });
+  };
 
   console.log("RENDER = ", data);
   return (

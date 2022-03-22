@@ -4,12 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 
 function SignUP() {
-    const adminUser = {
-        email: "admin@example.com",
-        password: "password"
-    }
 
-    const [user, setUser] = useState({ name: "", email: "" });
+
+    const [data, setUser] = useState({ userid: "", password: "" });
     const [error, setError] = useState(""); 
     const navigate = useNavigate();
         const handleClick = () => {
@@ -21,25 +18,12 @@ function SignUP() {
 
     const Login = details => {
         console.log(details);
-        
-        localStorage.setItem("email","admin@example.com");
-        localStorage.setItem("password","password");
-        if (details.email == adminUser.email && details.password == adminUser.password) {
-            console.log("Logged in");
-            setUser({
-                name: details.name,
-                email: details.email
-            }
-            );
-            handleClick();
-        } else {
-            console.log("Details do not match!");
-            setError("Details do not match!");
-        }
+     
+       
     }
 
     const Logout = () => {
-        setUser({ name: "", email: "" });
+        setUser({ userid: "", password: "" });
     }
     const myStyles = {
         backgroundImage: "url(/images/bg.jpg)",
@@ -54,10 +38,9 @@ function SignUP() {
     return (
         <div className="App" style ={myStyles}>
             {
-                (user.email != "") ? (
+                (data.userid != "") ? (
                     <div className="welcome" >
                         
-                        <h2>Welcome, <span>{user.name}</span></h2>
                         <button onCkick={Logout}>Logout</button>
                     </div>
                 ) : (

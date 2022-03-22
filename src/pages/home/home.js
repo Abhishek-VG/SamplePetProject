@@ -119,34 +119,29 @@ function Home() {
         setOpen(false);
     };
 
-    const adminUser = {
-        email: "admin@example.com",
-        password: "password"
-    }
     const navigate = useNavigate();
 
     React.useEffect(() => {
 
-        let email = localStorage.getItem('email');
-        let password = localStorage.getItem('password');
-        if (email == adminUser.email && password == adminUser.password) {
+        let userId = localStorage.getItem('userid');
+        if (userId) {
             console.log("Logged in");
         }
         else {
-            navigate('/signup')
+            navigate('/login')
         }
 
     }, []);
 
     const Logout = () => {
-        localStorage.removeItem("email");
+        localStorage.removeItem("userid");
         localStorage.removeItem("password");
 
     }
 
     const text = {
         color: 'green',
-        backgroundColor: '#bfdc7f',
+        backgroundColor: '',
     }
 
 
@@ -187,7 +182,7 @@ function Home() {
                 <AppBar position="fixed" open={open} id="top"  style={{ width: '100%',backgroundImage: 'url(/images/header.jpeg)', backgroundPosition: '229px -44px', backgroundRepeat: "norepeat", 
                 backgroundColor: 'white' }}>
                     <Toolbar id="toolbar" style={{paddingLeft: 0}}>
-                        <Typography variant="h6" component="div" style={{ backgroundImage: 'url(/images/logo.jpeg)', backgroundSize: 'cover', height: '67px', width: '116px' }}/* variant="h6" noWrap component="div" style={{ textAlignVertical: "center", textAlign: "center", }} */>
+                        <Typography variant="h6" component="div" style={{ backgroundImage: 'url(/images/logo.jpg)', backgroundSize: 'cover', height: '67px', width: '116px',  }}/* variant="h6" noWrap component="div" style={{ textAlignVertical: "center", textAlign: "center", }} */>
                             
                         </Typography>
                     </Toolbar>
@@ -265,10 +260,10 @@ function Home() {
 
                     </List>
                     <Divider />
-                    <NavLink to="../signup" style={{
+                    <NavLink to="../login" style={{
                         color: 'red',
                         textDecoration: 'none',
-                        backgroundColor: '#ffcccb',
+                        backgroundColor: '',
                     }}
                         onClick={() => {
                             Logout();

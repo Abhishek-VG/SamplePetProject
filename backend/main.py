@@ -37,8 +37,14 @@ class CustModel:
         self.contact = contact
         self.address = address
 
-        
+    def toJson(self):
+        return json.dumps(self, default=lambda obj: obj.__dict__)
 
+class UserModel:
+    def __init__(self, userid, password):
+        self.userid = userid
+        self.password = password
+        
     def toJson(self):
         return json.dumps(self, default=lambda obj: obj.__dict__)
 
@@ -144,12 +150,37 @@ def get_cust():
 def user():
     mycursor = mydb.cursor()
     data = request.json  # data is empty
-    sql = "INSERT INTO users (userid,password) VALUES (%s, %s)"
-    val = (data["userid"], data["password"])
-    mycursor.execute(sql, val)
-    mydb.commit()
+    sql = "select userid from users where userid=%s"
+    val = data["userid"]
+    print("value",val)
+    mycursor.execute(sql, (val,))
+    myresult = mycursor.fetchone()
+    print("hello",myresult, myresult == data["userid"])
+    mycursor.reset() 
+
+    if (myresult != None and (myresult[0] == data["userid"])):
+        print("ide kano data")
+        return json.dumps(False)
+    else :
+        sql = "INSERT INTO users (userid,password) VALUES (%s, %s)"
+        val = (data["userid"], data["password"])
+        mycursor.execute(sql, val)
+    mydb.commit() 
     return json.dumps(True)
 
+
+@app.route("/loguser", methods=["POST"])
+@cross_origin()
+def log_user():
+    mycursor = mydb.cursor()
+    data = request.json  # data is empty
+    sql = "select userid from users where userid=%s and password=%s"
+    val = (data["userid"],data["password"],)
+    mycursor.execute(sql, val)
+    myresult = mycursor.fetchone()
+    if (myresult != None and (myresult[0] == data["userid"])):
+                    return json.dumps(True)
+    return json.dumps(False)
 
 @app.route("/deletePets/<petid>", methods=["DELETE"])
 def guide_delete(petid):

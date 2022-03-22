@@ -38,7 +38,6 @@ const Edit = () => {
 
 
     const myStyle = {
-        backgroundImage: "url(/images/naayi.jfif)",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',

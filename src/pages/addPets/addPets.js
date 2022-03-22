@@ -12,7 +12,6 @@ const AddPets = () => {
 
 
     const myStyle = {
-        backgroundImage: "url(/images/naayi.jfif)",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
@@ -211,7 +210,7 @@ const AddPets = () => {
                         color: 'white',
                         WebkitBoxSizing: 'border-box',
                         WebkitBorderRadius: '20px',
-                        fontWeight: 'bold',
+                        //fontWeight: 'bold',
 
                     }}
                     onChange={handleChange}
