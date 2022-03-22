@@ -84,13 +84,8 @@ const Customer = () => {
         >
           <CardHeader
             title="Customer Details"
-            style={{
-              backgroundColor: "#1875d1",
-              margin: "0 -15px 10px -15px",
-              height: "50px",
-              color: "white",
-              textAlign: "center",
-            }}
+            style={{ margin: "0 -15px 10px -15px", borderBottom: " solid #dfcdb3", height: "50px", color: "#966135", textAlign: "center" }}
+
           />
 
           <br />

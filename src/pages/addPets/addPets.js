@@ -104,7 +104,7 @@ const AddPets = () => {
             <Paper elevation={3} style={{ padding: "0 15px 15px 15px", ...myStyle }}>
                 <CardHeader
                     title="Add pets"
-                    style={{ backgroundColor: "#1875d1", margin: "0 -15px 10px -15px", height: "50px", color: "white", textAlign: "center" }}
+                    style={{ margin: "0 -15px 10px -15px", borderBottom: " solid #dfcdb3", height: "50px", color: "#966135", textAlign: "center" }}
                 />
 
                 <Autocomplete
@@ -121,17 +121,7 @@ const AddPets = () => {
                     )}
                 />
                 <br />
-                {/* 
-                <TextField
-                    id="id"
-                    label="Pet Id"
-                    type="number"
-                    fullWidth
-                    variant="outlined"
-                    onChange={handleChange}
-
-                />
-                <br /> */}
+                
                 <TextField
                     id="price"
                     label="Price"
@@ -153,15 +143,6 @@ const AddPets = () => {
 
                 />
                 <br />
-                {/* <TextField
-                    id="age"
-                    label="age"
-                    type="number"
-                    fullWidth
-                    variant="outlined"
-                    onChange={handleChange}
-                />
-                <br /> */}
                 <br />
                 <TextField
                     id="name"
@@ -172,19 +153,7 @@ const AddPets = () => {
                     onChange={handleChange}
 
                 />
-                {/* <br />
-                 <TextField
-                    id="dob"
-                    label="Date Of Birth"
-                    type="date"
-                    defaultValue="2017-05-24"
-                    sx={{ width: 220 }}
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    onChange={handleChange}
-
-                /> */}
+                
                 <br />
                 <br />
                 <TextField
