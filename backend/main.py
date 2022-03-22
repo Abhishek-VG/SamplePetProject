@@ -75,7 +75,6 @@ def get_pets():
         mycursor.execute(sql, (x[0],))
         data = mycursor.fetchone()
         list.append(PetModel(x[0], x[1], x[2], data[0], data[1], data[2], data[3]).toJson().strip())
-    print("list=", data)
     return jsonify(list)
 
 
@@ -91,7 +90,6 @@ def post():
     val = (data["type"], data["name"])
     mycursor.execute(sql, val)
     last_id = mycursor.lastrowid
-    print("data pet id=", last_id)
     mydb.commit()
 
     if data["type"] == "dogs":
@@ -123,7 +121,6 @@ def customer():
 
     mycursor = mydb.cursor()
     data = request.json  # data is empty
-    print('all data', data)
     sql = "INSERT INTO customer (name, product,price, contact, address) VALUES (%s, %s, %s, %s, %s)"
     val = (data["name"], data["product"],data["price"], data["contact"],data["address"])
     mycursor.execute(sql, val)
@@ -152,14 +149,11 @@ def user():
     data = request.json  # data is empty
     sql = "select userid from users where userid=%s"
     val = data["userid"]
-    print("value",val)
     mycursor.execute(sql, (val,))
     myresult = mycursor.fetchone()
-    print("hello",myresult, myresult == data["userid"])
     mycursor.reset() 
 
     if (myresult != None and (myresult[0] == data["userid"])):
-        print("ide kano data")
         return json.dumps(False)
     else :
         sql = "INSERT INTO users (userid,password) VALUES (%s, %s)"
@@ -184,7 +178,6 @@ def log_user():
 
 @app.route("/deletePets/<petid>", methods=["DELETE"])
 def guide_delete(petid):
-    print("PRINTING ID ="+petid)
     mycursor = mydb.cursor()
     sql = "DELETE from animals where petid=%s"
     val = (petid,)
@@ -234,8 +227,6 @@ def get_pet(petid):
     val = (petid,)
     mycursor.execute(sql, val)
     db = mycursor.fetchall()
-    print("data= ", db)
-
     for x in db:
         if x[1] == "dogs":
             sql = "select breed, description, price, pic from dogs where petid=%s"
@@ -253,7 +244,6 @@ def get_pet(petid):
     petdata = mycursor.fetchone()
     data = PetModel(x[0], x[1], x[2], petdata[0], petdata[1],
                     petdata[2], petdata[3]).toJson().strip()
-    # print(data)
     return data
 
 
